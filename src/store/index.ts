@@ -14,25 +14,45 @@ export const useStore = defineStore("mainStore", {
             if (state.role === "admin") {
                 return [
                     {
-                        path: "DataOverview",
+                        path: "/dashboard/DataOverview",
+                        name: "数据总览",
+                        icon: "Odometer",
                     },
                     {
-                        path: "TeamManagement",
+                        path: "/dashboard/TeamManagement",
+                        name: "队伍管理",
+                        icon: "User",
                     },
                     {
-                        path: "TrainingPlan",
+                        path: "/dashboard/TrainingPlan",
+                        name: "训练计划",
+                        icon: "Basketball",
                     },
                     {
-                        path: "TrainingMonitoring",
+                        path: "/dashboard/TrainingMonitoring",
+                        name: "训练监控",
+                        icon: "View",
                     },
                     {
-                        path: "TrainingData",
+                        path: "/dashboard/TrainingData",
+                        name: "训练数据",
+                        icon: "Coin",
+                        children: [
+                            {
+                                path: "/dashboard/DataOverview/ggg",
+                                name: "ggg",
+                                icon: "Setting",
+                            },
+                        ],
                     },
-                ]
+                ] as {
+                    path: string
+                    name: string
+                    icon: string
+                    children?: { path: string; name: string; icon: string }[]
+                }[]
             } else {
-                return [
-                    
-                ]
+                return []
             }
         },
     },
