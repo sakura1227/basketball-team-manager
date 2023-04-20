@@ -46,12 +46,43 @@
               <Expand v-if="isExpandMenu" />
             </el-icon>
           </div>
-          <div class="size-title">
-            篮球系统
+          <div class="seach-input-box">
+            <el-input placeholder="搜索" />
           </div>
         </div>
         <div class="right-info-box">
-          信息
+          <div class="info-icon-box">
+            <div class="info-item">
+              <div class="info-message">
+                10
+              </div>
+              <el-icon>
+                <Bell />
+              </el-icon>
+            </div>
+            <div class="info-item">
+              <div class="info-message">
+                10
+              </div>
+              <el-icon>
+                <ChatDotSquare />
+              </el-icon>
+            </div>
+            <div class="info-item">
+              <div class="info-message is-3">
+                10
+              </div>
+              <el-icon>
+                <Setting />
+              </el-icon>
+            </div>
+          </div>
+          <div class="info-user-box">
+            Hi,{{ store.username }}
+            <div class="user-img">
+
+            </div>
+          </div>
         </div>
       </section>
       <!-- 右侧 -->
@@ -71,7 +102,9 @@ import {
   Location,
   Setting,
   Expand,
-  Fold
+  Fold,
+  ChatDotSquare,
+  Bell
 } from '@element-plus/icons-vue'
 const store = useStore()
 const menuList = store.getMenuList
@@ -120,6 +153,7 @@ const isExpandMenu = ref<boolean>(false)
       align-items: center;
 
       .left-title-box {
+        min-width: 40%;
         display: flex;
         justify-content: flex-start;
         align-items: center;
@@ -139,11 +173,106 @@ const isExpandMenu = ref<boolean>(false)
           }
         }
 
-        .size-title {}
+        .seach-input-box {
+          width: 100px;
+          flex: 1;
+          margin-left: 30px;
+        }
+      }
+
+      .right-info-box {
+        height: 100%;
+        min-width: 50%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .info-icon-box {
+          height: 100%;
+          width: 50%;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+
+          .info-item {
+            position: relative;
+            cursor: pointer;
+            width: 35px;
+            height: 35px;
+            border-radius: 10px;
+            background-color: #E9ECFF;
+            margin-right: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #2F4CDD;
+
+            &:nth-child(3) {
+              color: #FF6D4D;
+              background-color: #FFEBE7;
+            }
+
+            &:hover {
+              background-color: #2F4CDD;
+              color: #E9ECFF;
+
+              &:nth-child(3) {
+                color: #FFEBE7;
+                background-color: #FF6D4D;
+              }
+            }
+
+            //消息通知
+            .info-message {
+              position: absolute;
+              right: -7px;
+              top: -4px;
+              background: #2F4CDD;
+              color: #fff;
+              font-size: 10px;
+              width: 20px;
+              height: 20px;
+              border-radius: 50%;
+              text-align: center;
+              line-height: 20px;
+            }
+
+            .is-3 {
+              background: #FF6D4D;
+            }
+          }
+        }
+
+        .info-user-box {
+          display: flex;
+          align-items: center;
+          position: relative;
+          margin-right: 30px;
+          padding-left: 20px;
+          width: 100px;
+          height: 60%;
+          color: #fff;
+          background-color: #2F4CDD;
+          border-radius: 10px;
+
+          .user-img {
+            background: rgb(200, 10, 10);
+            top: 50%;
+            transform: translateY(-50%);
+            right: -10px;
+            position: absolute;
+            height: 35px;
+            width: 35px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+          }
+        }
       }
     }
 
     .right-box {
+      height: calc(100% - 60px);
+      overflow: auto;
       flex: 1;
       box-sizing: border-box;
       height: calc(100% - 60px);
