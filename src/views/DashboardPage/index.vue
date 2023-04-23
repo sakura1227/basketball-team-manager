@@ -275,7 +275,6 @@ const isExpandMenu = ref<boolean>(false)
       overflow: auto;
       flex: 1;
       box-sizing: border-box;
-      height: calc(100% - 60px);
       background: #F9F9F9;
     }
   }

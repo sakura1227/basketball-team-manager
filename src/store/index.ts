@@ -29,21 +29,9 @@ export const useStore = defineStore("mainStore", {
                         icon: "Basketball",
                     },
                     {
-                        path: "/dashboard/TrainingMonitoring",
-                        name: "训练监控",
-                        icon: "View",
-                    },
-                    {
                         path: "/dashboard/TrainingData",
                         name: "训练数据",
                         icon: "Coin",
-                        children: [
-                            {
-                                path: "/dashboard/DataOverview/ggg",
-                                name: "ggg",
-                                icon: "Setting",
-                            },
-                        ],
                     },
                 ] as {
                     path: string
