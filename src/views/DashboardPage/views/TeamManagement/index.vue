@@ -127,10 +127,6 @@
           <div class="buttom-detail" ref="graphRef">
           </div>
         </div>
-        <!-- 球队信息 -->
-        <div class="tem-detail-info">
-
-        </div>
       </div>
     </div>
   </main>
@@ -1426,15 +1422,15 @@ onMounted(() => {
           box-sizing: border-box;
           min-height: 220px;
           justify-content: space-between;
-
+          border-bottom: 1px dashed #b2b266;
           .top-left-info {
             box-sizing: border-box;
-            width: 25%;
+            flex: 1;
             padding-left: 10px;
 
             .info-item {
               box-sizing: border-box;
-
+              width: 100%;
               color: #969BA0;
               border-bottom: 1px dashed #999;
             }
@@ -1442,6 +1438,7 @@ onMounted(() => {
 
           .top-right-info {
             width: 65%;
+            border-left: 1px dashed #999;
           }
         }
 

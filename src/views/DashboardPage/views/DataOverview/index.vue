@@ -577,9 +577,7 @@ onMounted(() => {
   })
   chartInstance4.setOption(chartOption4)
 })
-//右侧面积图
 
-//下部住柱状图
 </script>
  
 <style scoped lang="less">
